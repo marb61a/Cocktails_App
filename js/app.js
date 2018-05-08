@@ -119,5 +119,43 @@ function resultsDelegation(e){
 
 // Document ready function
 function documentReady(){
+    // Display on load the favourites from storage
+    ui.isFavorite();
     
+    // Select the search category select
+    const searchCategory = document.querySelector('.search-category');
+    if(searchCategory){
+        ui.displayCategories();
+    }
+    
+    // When favourites page
+    const favoritesTable = document.querySelector('#favorites');
+    if(favoritesTable){
+        // Get the favourites from storage and display
+        const drinks = cocktailDB.getFromDB();
+        ui.displayFavorites(drinks);
+        
+        // When view or delete are clicked
+        favoritesTable.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Delegation
+            if(e.target.classList.contains('get-recipe')){
+                cocktail.getSingleRecipe(e.target.dataset.id)
+                    .then(recipe => {
+                        // Displays a single recipe in a modal
+                        ui.displaySingleRecipe( recipe.recipe.drinks[0] );
+                    });
+            }
+            
+            // When remove button is clicked in favorites
+            if(e.target.classList.contains('remove-recipe')){
+                // Remove from the DOM
+                ui.removeFavorite(e.target.parentElement.parentElement);
+                
+                // Remove from localstorage
+                cocktailDB.removeFromDB( e.target.dataset.id );
+            }
+        });
+    }
 }
