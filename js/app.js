@@ -40,6 +40,39 @@ function getCocktails(e){
         // The type of search such as name, ingredient or cocktails
         const type = document.querySelector('#type').value;
         
+        // Check to see which method and then run
+        switch(type){
+            case 'name':
+                serverResponse = cocktail.getDrinksByName( searchTerm );
+                break;
+           case 'ingredient':
+                serverResponse = cocktail.getDrinksByIngredient( searchTerm );
+                break;
+           case 'category':
+                serverResponse = cocktail.getDrinksByCategory( searchTerm );
+                break;
+           case 'alcohol': 
+                serverResponse = cocktail.getDrinksByAlcohol(searchTerm);
+                break;
+        }
+        
+        ui.clearResults();
+        
+        // Query by the name of the cocktail
+        serverResponse.then(cocktails => {
+            if(cocktails.cocktails.drinks === null){
+                // There is nothing existing here
+                ui.printMessage('There\'re no results, try a different term ', 'danger');
+            } else {
+                if(type === 'name'){
+                    // Display with ingreients
+                    ui.displayDrinksWithIngredients(cocktails.cocktails.drinks);
+                } else {
+                    // Display without Ingredients (category, alcohol, ingredient)
+                    ui.displayDrinks(cocktails.cocktails.drinks);
+                }
+            }    
+        });
     }
 }
 
