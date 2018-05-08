@@ -44,11 +44,42 @@ class UI {
                             </a>
                         </div>
                     </div>
-                <div>
+                </div>
             `;
         });
         
         this.isFavorite();
     }
     
+    // Display cocktails with ingredients
+    displayDrinksWithIngredients(drinks){
+        const resultsWrapper = document.querySelector('results-wrapper');
+        resultsWrapper.style.display = 'block';
+        
+        // Insert the results
+        const resultsDiv = document.querySelector('#results');
+        
+        drinks.forEach(drink => {
+            resultsDiv.innerHTML += `
+                <div class="col-md-6">
+                    <div class="card my-3">
+                        <button type="button" data-id="${drink.idDrink}" class="favorite-btn btn btn-outline-info">
+                            +
+                        </button>
+                        <img class="card-img-top" src="http://${drink.strDrinkThumb}" alt="${drink.strDrink}">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">${drink.strDrink}</h2>
+                               <p class="card-text font-weight-bold">Instructions: </p>
+                               <p class="card-text">
+                                     ${drink.strInstructions}
+                               </p>
+                               
+                        </div>
+                    </div>
+                </div> 
+            `;    
+        });
+        
+        this.isFavorite();
+    }
 }
