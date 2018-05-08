@@ -9,6 +9,20 @@ class CocktailDB {
         localstorage.setItem('drinks', JSON.stringify(drinks));
     }
     
+    // Remove from localstorage
+    removeFromDB(id){
+        const drinks = this.getFromDB();
+        
+        drinks.forEach((drink, index) => {
+            if(id === drink.id){
+                drinks.splice(index, 1);
+            }    
+        });
+        
+        // Set the array into localstorage
+        localStorage.setItem('drinks', JSON.stringify(drinks) );
+    }
+    
     // Return recipes from localstorage
     getFromDB(){
         let drinks;
