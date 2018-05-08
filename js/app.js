@@ -76,6 +76,47 @@ function getCocktails(e){
     }
 }
 
+// Delegation for the #results area
+function resultsDelegation(e){
+    e.preventDefault();
+    
+    if(e.target.classList.contains('.get-recipe')){
+        cocktail.getSingleRecipe(e.target.dataset.id)
+            .then(recipe => {
+                // Diaplays a single recipe in a modal
+                ui.displaySingleRecipe( recipe.recipe.drinks[0] );
+            });
+    }
+    
+    // When the favourite button is clicked
+    if(e.target.classList.contains('favorite-btn')){
+        if(e.target.classList.contains('is-favorite')){
+            // Remove the class
+            e.target.classList.remove('is-favorite');
+            e.target.textContent = "+";
+            
+            // Remove from storage
+            cocktailDB.removeFromDB(e.target.dataset.id);
+        } else {
+            // Add the class
+            e.target.classList.add('is-favorite');
+            e.target.textContent = "-";
+            
+            // Get info
+            const cardBody = e.target.parentElement;
+            
+            const drinkInfo = {
+                id: e.target.dataset.id,
+                name: cardBody.querySelector('.card-title').textContent,
+                image: cardBody.querySelector('.card-img-top').src
+            };
+            
+            // Add into storage
+            cocktailDB.saveIntoDB(drinkInfo);
+        }
+    }
+}
+
 // Document ready function
 function documentReady(){
     
