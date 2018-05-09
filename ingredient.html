@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>The Perfect Cocktail | Search by Name</title>
-        <link rel="stylesheet" href="css/custom.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700,900" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
         <!--- NAVBAR --->
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="form-group pt-3">
                                         <input type="hidden" id="type" value="ingredient">
-                                        <button type="submit" class="btn btn-success d-block">
+                                        <button type="submit" class="btn btn-info d-block">
                                             GET COCKTAILS
                                         </button>
                                     </div>
@@ -75,7 +75,34 @@
             </div>
         </div> <!--#content-->
         
-        
+        <!--- MODAL --->
+        <div class="modal fade" id="recipe" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title"></h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="alert alert-success">PREPARATION:</h3>
+                        <div class="description-text mb-4"></div>
+
+                        <h3  class="alert alert-success">INGREDIENTS:</h3>
+                        <div class="ingredient-list">
+                            <ul class="list-group"></ul>
+                        </div>
+                        <div class="ingredients mt-3"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> <!--.modal-->
         
         <!--- FOOTER --->
         <footer class="bg-primary p-4">
