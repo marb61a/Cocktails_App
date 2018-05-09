@@ -31,11 +31,46 @@
                             <a class="nav-link" href="category.html"><font color="#469988">CATEGORY</font></a>
                         </li>
                         <li class="nav-item-active">
-                            <a class="nav-link" href="filter-alcohol.html"><font color="#21ef24">ALCOHOL/NON-ALCOHOL</font></a>
+                            <a class="nav-link" href="filter-alcohol.html"><font color="#21ef24">ALCOHOL/ALCOHOL-FREE</font></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
+        <!--- CONTENT --->
+        <div id="content" class="mt-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="jumbotron col-12 col-md-10">
+                        <h1 class="text-center">
+                            SEARCH BY ALCOHOL CONTENT
+                        </h1>
+                        <div class="row">
+                            <div class="col-12">
+                                <form action="#" id="search-form">
+                                    <div class="form-group mt-4">
+                                            <select class="form-control search-alcohol" id="search">
+                                                <option value="Alcoholic">ALCOHOL</option>  
+                                                <option value="Non_Alcoholic">ALCOHOL-FREE</option>     
+                                            </select>
+                                    </div>
+                                    <div class="form-group pt-3">
+                                        <input type="hidden" id="type" value="alcohol">
+                                        <button type="submit" class="btn btn-success d-block">
+                                            GET COCKTAILS
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-12 mt-5 results-wrapper" style="display:none;" >
+                                <h1 class="text-center">Results: <span id="total"></span></h1>
+                                <div id="results" class="mt-5 row" ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

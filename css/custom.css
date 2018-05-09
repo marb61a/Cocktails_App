@@ -19,12 +19,12 @@
 }
 
 body {
-    background-color: #bed4f7;
+    background-color: #bed4f7!important;
 }
 
 #content {
     padding-top: 0;
-    background-color: #bed4f7;
+    background-color: #bed4f7!important;
     height: 100%;
 }
 
