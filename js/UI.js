@@ -82,4 +82,27 @@ class UI {
         
         this.isFavorite();
     }
+    
+    // Remove a single favourite from the DOM
+    removeFavorite(element){
+        element.remove();
+    }
+    
+    // Add a class when a cocktail is favourite
+    isFavorite(){
+        const drinks = cocktailDB.getFromDB();
+        
+        drinks.forEach(drink => {
+            // Destructuring the id
+            let {id} = drink;
+            
+            // Select favourites
+            let favouriteDrink = document.querySelector(`[data-id="${id}"]`);
+            if(favouriteDrink){
+                favoriteDrink.classList.add('is-favorite');
+                favoriteDrink.textContent = '-';
+            }
+            
+        });
+    }
 }

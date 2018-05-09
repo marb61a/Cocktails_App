@@ -8,11 +8,24 @@
 }
 
 .jumbotron h1 {
-    color: #1f74e2;
+    color: #092551;
+    font-weight: bold;
+    font-style: Arial;
+    margin-bottom: 0;
 }
 
 .navbar-brand {
     font-size: 1.6rem;
+}
+
+body {
+    background-color: #bed4f7;
+}
+
+#content {
+    padding-top: 0;
+    background-color: #bed4f7;
+    height: 100%;
 }
 
 .sitename {
