@@ -109,7 +109,35 @@ class UI {
                 ingredients.push(ingredientMeasure);
             }
         }
+        
+        // Build the template
+        let ingredientsTemplate = '';
+        ingredients.forEach(ingredient => {
+            ingredientsTemplate += `
+                <li class="list-group-item">
+                    ${ingredient.ingredient} - ${ingredient.measure}
+                </li>
+            `;    
+        });
+        
+        return ingredientsTemplate;
     }
+    
+    // Display a single recipe
+    displaySingleRecipe(recipe){
+        // Setup variables
+        const modalTitle = document.querySelector('.modal-title');
+        const modalDescription = document.querySelector('.modal-body .description-text');
+        const modalIngredients = document.querySelector('.modal-body .ingredient-list .list-group');
+        
+        // Set the values
+        modalTitle.innerHTML = recipe.strDrink;
+        modalDescription.innerHTML = recipe.strInstructions;
+        
+        // Display the ingredients
+        modalIngredients.innerHTML = this.displayIngredients(recipe);
+    }
+    
     
     // Remove a single favourite from the DOM
     removeFavorite(element){
