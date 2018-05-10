@@ -1,24 +1,24 @@
 class UI {
      // Display all the Drink Categories
      displayCategories() {
-        const categoryList = cocktail.getCategories()
-            .then(categories => {
-                 const catList = categories.categories.drinks;
+          const categoryList = cocktail.getCategories()
+                .then(categories => {
+                     const catList = categories.categories.drinks;
 
-                // Append a first option without value
-                const firstOption = document.createElement('option');
-                firstOption.textContent = '- Select -';
-                firstOption.value = '';
-                document.querySelector('#search').appendChild(firstOption);
+                    // Append a first option without value
+                    const firstOption = document.createElement('option');
+                    firstOption.textContent = '- Select -';
+                    firstOption.value = '';
+                    document.querySelector('#search').appendChild(firstOption);
 
-                 // Append into the Select
-                catList.forEach(category => {
-                     const option = document.createElement('option');
-                     option.textContent = category.strCategory;
-                     option.value = category.strCategory.split(' ').join('_');
-                     document.querySelector('#search').appendChild(option);
+                     // Append into the Select
+                    catList.forEach(category => {
+                         const option = document.createElement('option');
+                         option.textContent = category.strCategory;
+                         option.value = category.strCategory.split(' ').join('_');
+                         document.querySelector('#search').appendChild(option);
+                    })
                 })
-            });
      }
 
      // Display the cocktails without ingredient
@@ -30,26 +30,23 @@ class UI {
           // Insert the results
           const resultsDiv = document.querySelector('#results');
 
-          // Loop through drinks
+          // Loop trought drinks
           drinks.forEach(drink => {
                resultsDiv.innerHTML += `
                     <div class="col-md-4">
-                        <div class="card my-3">
-                            <button type="button" data-id="${drink.idDrink}" class="favorite-btn btn btn-outline-info">
-                                +
-                            </button>
-                            <img class="card-img-top" src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
-                            <div class="card-body">
-                                <h2 class="card-title text-center">${drink.strDrink}</h2>
-                                <a data-target="#recipe" class="btn btn-success get-recipe" href="#" data-toggle="modal" data-id="${drink.idDrink}">
-                                    Get Recipe
-                                </a>
-                            </div>
+                         <div class="card my-3">
+                              <button type="button" data-id="${drink.idDrink}" class="favorite-btn btn btn-outline-info">
+                              +
+                              </button>
+                              <img class="card-img-top" src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
+                              <div class="card-body">
+                                   <h2 class="card-title text-center">${drink.strDrink}</h2>
+                                   <a data-target="#recipe" class="btn btn-success get-recipe" href="#" data-toggle="modal" data-id="${drink.idDrink}">Get Recipe</a>
+                              </div>
                          </div>
                     </div>
                `;
           });
-
           this.isFavorite();
      }
      // Displays drinks with ingredients
@@ -65,11 +62,12 @@ class UI {
           drinks.forEach(drink => {
                resultsDiv.innerHTML += `
                     <div class="col-md-6">
-                        <div class="card my-3">
-                            <button type="button" data-id="${drink.idDrink}" class="favorite-btn btn btn-outline-info">
-                                +
-                            </button>
-                            <img class="card-img-top" src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
+                         <div class="card my-3">
+                              <button type="button" data-id="${drink.idDrink}" class="favorite-btn btn btn-outline-info">
+                              +
+                              </button>
+                              <img class="card-img-top" src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
+
                               <div class="card-body">
                                    <h2 class="card-title text-center">${drink.strDrink}</h2>
                                    <p class="card-text font-weight-bold">Instructions: </p>
@@ -96,31 +94,30 @@ class UI {
                     </div>
                `;
           });
-
           this.isFavorite();
      }
 
      // Prints the ingredients and Measurements
      displayIngredients(drink) {
-        let ingredients = [];
-        for(let i = 1; i < 16; i++) {
-            const ingredientMeasure = {};
-            if( drink[`strIngredient${i}`] !== '' ) {
-                ingredientMeasure.ingredient = drink[`strIngredient${i}`];
-                ingredientMeasure.measure = drink[`strMeasure${i}`];
-                ingredients.push(ingredientMeasure);
-            }
-        }
+          let ingredients = [];
+          for(let i = 1; i < 16; i++) {
+               const ingredientMeasure = {};
+               if( drink[`strIngredient${i}`] !== '' ) {
+                    ingredientMeasure.ingredient = drink[`strIngredient${i}`];
+                    ingredientMeasure.measure = drink[`strMeasure${i}`];
+                    ingredients.push(ingredientMeasure);
+               }
+          }
 
-        // Build the template
-        let ingredientsTemplate = '';
-        ingredients.forEach(ingredient => {
-           ingredientsTemplate += `
-                <li class="list-group-item">${ingredient.ingredient} - ${ingredient.measure}</li>
-           `;
-        });
+          // Build the template
+          let ingredientsTemplate = '';
+          ingredients.forEach(ingredient => {
+               ingredientsTemplate += `
+                    <li class="list-group-item">${ingredient.ingredient} - ${ingredient.measure}</li>
+               `;
+          });
 
-        return ingredientsTemplate;
+          return ingredientsTemplate;
      }
 
      // Display single recipe
@@ -144,21 +141,21 @@ class UI {
 
           // Add the HTML
           div.innerHTML = `
-            <div class="alert alert-dismissible alert-${className}">
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                ${message}
-            </div>
+               <div class="alert alert-dismissible alert-${className}">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    ${message}
+               </div>
           `;
 
-        // Insert before
-        const reference = document.querySelector('.jumbotron h1');
-        const parentNode = reference.parentElement;
-        parentNode.insertBefore(div, reference);
+          // Insert before
+          const reference = document.querySelector('.jumbotron h1');
+          const parentNode = reference.parentElement;
+          parentNode.insertBefore(div, reference);
 
-        // remove after 3 seconds
-        setTimeout(() => {
-            document.querySelector('.alert').remove();
-        }, 3000);
+          // remove after 3 seconds
+          setTimeout(() => {
+               document.querySelector('.alert').remove();
+          }, 3000);
      }
 
      // Clear previous results
@@ -193,7 +190,7 @@ class UI {
                `;
 
                favoritesTable.appendChild(tr);
-          });
+          })
      }
 
      // Remove single favorite from dom
@@ -201,20 +198,20 @@ class UI {
           element.remove();
      }
 
-    // Add a Class when cocktail is favorite
-    isFavorite() {
-        const drinks = cocktailDB.getFromDB();
+     // Add a Class when cocktail is favorite
+     isFavorite() {
+          const drinks = cocktailDB.getFromDB();
 
-        drinks.forEach(drink => {
-           // destructuring the id
-           let {id} = drink;
+          drinks.forEach(drink => {
+               // destructuring the id
+               let {id} = drink;
 
-           // Select the favorites
-           let favoriteDrink = document.querySelector(`[data-id="${id}"]`);
-           if(favoriteDrink) {
-                favoriteDrink.classList.add('is-favorite');
-                favoriteDrink.textContent = '-';
-           }
-        })
-    }
+               // Select the favorites
+               let favoriteDrink = document.querySelector(`[data-id="${id}"]`);
+               if(favoriteDrink) {
+                    favoriteDrink.classList.add('is-favorite');
+                    favoriteDrink.textContent = '-';
+               }
+          })
+     }
 }
