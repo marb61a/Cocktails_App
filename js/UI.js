@@ -3,6 +3,8 @@ class UI {
     displayCategories(){
         const categoryList = cocktail.getCategories()
             .then(categories => {
+                const catList = categories.categories.drinks;
+                
                 // Append a first option without value
                 const firstOption = document.createElement('option');
                 firstOption.textContent = '- Select -';
@@ -162,6 +164,40 @@ class UI {
             document.querySelector('.alert').remove();        
         }, 3000);
         
+    }
+    
+    // Clear the previous results
+    clearResults(){
+        const resultsDiv = document.querySelector('#results');
+        resultsDiv.innerHTML = '';
+    }
+    
+    // Display favorites from storage
+    displayFavorites(favorites){
+        const favoritesTable = document.querySelector('#favorites tbody');
+        
+        favorites.forEach(drink => {
+            const tr = document.createElement('tr');
+            
+            tr.innerHTML = `
+                <td>
+                    <img src="${drink.image}" alt="${drink.name}" width=100>
+                </td>
+                <td>${drink.name}</td>
+                <td>
+                    <a href="#" data-toggle="modal" data-target="#recipe" data-id="${drink.id}" class="btn btn-success get-recipe" >
+                        View
+                    </a>
+                </td>
+                <td>
+                    <a href="#" data-id="${drink.id}" class="btn btn-danger remove-recipe" >
+                        Remove
+                    </a>
+                </td>
+            `;
+            
+            favoritesTable.appendChild(tr);
+        });
     }
     
     // Remove a single favourite from the DOM
