@@ -214,8 +214,8 @@ class UI {
             let {id} = drink;
             
             // Select favourites
-            let favouriteDrink = document.querySelector(`[data-id="${id}"]`);
-            if(favouriteDrink){
+            let favoriteDrink = document.querySelector(`[data-id="${id}"]`);
+            if(favoriteDrink){
                 favoriteDrink.classList.add('is-favorite');
                 favoriteDrink.textContent = '-';
             }
