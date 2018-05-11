@@ -24,6 +24,18 @@ class CocktailAPI {
             cocktails    
         };
     }
+
+    // Get a single recipe 
+     async getSingleRecipe(id) {
+          // Search by Ingredient
+          const apiResponse = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+          // Wait for response then return JSON
+          const recipe = await apiResponse.json();
+
+          return {
+               recipe
+          }
+     }
     
     // Retrieves all categories from the API
     async getCategories(){
@@ -38,16 +50,16 @@ class CocktailAPI {
     }
     
     // Get Drinks By Category
-     async getDrinksByCategory(category){
-          // Search by Category
-          const apiResponse = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`);
-          
-          // Wait for response then return JSON
-          const cocktails = await apiResponse.json();
+    async getDrinksByCategory(category){
+        // Search by Category
+        const apiResponse = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`);
+        
+        // Wait for response then return JSON
+        const cocktails = await apiResponse.json();
 
-          return {
-               cocktails
-          };
+        return {
+             cocktails
+        };
      }
 
      // Get alcohol or non alcohol drinks

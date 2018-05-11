@@ -1,24 +1,24 @@
 class UI {
      // Display all the Drink Categories
      displayCategories() {
-          const categoryList = cocktail.getCategories()
-                .then(categories => {
-                     const catList = categories.categories.drinks;
+        const categoryList = cocktail.getCategories()
+            .then(categories => {
+                const catList = categories.categories.drinks;
 
-                    // Append a first option without value
-                    const firstOption = document.createElement('option');
-                    firstOption.textContent = '- Select -';
-                    firstOption.value = '';
-                    document.querySelector('#search').appendChild(firstOption);
+                // Append a first option without value
+                const firstOption = document.createElement('option');
+                firstOption.textContent = '- Select -';
+                firstOption.value = ' ';
+                document.querySelector('#search').appendChild(firstOption);
 
-                     // Append into the Select
-                    catList.forEach(category => {
-                         const option = document.createElement('option');
-                         option.textContent = category.strCategory;
-                         option.value = category.strCategory.split(' ').join('_');
-                         document.querySelector('#search').appendChild(option);
-                    })
+                 // Append into the Select
+                catList.forEach(category => {
+                     const option = document.createElement('option');
+                     option.textContent = category.strCategory;
+                     option.value = category.strCategory.split(' ').join('_');
+                     document.querySelector('#search').appendChild(option);
                 })
+            })
      }
 
      // Display the cocktails without ingredient
@@ -51,7 +51,6 @@ class UI {
      }
      // Displays drinks with ingredients
      displayDrinksWithIngredients(drinks) {
-
           // Show the Results
           const resultsWrapper = document.querySelector('.results-wrapper');
           resultsWrapper.style.display = 'block';
@@ -178,7 +177,7 @@ class UI {
                     </td>
                     <td>${drink.name}</td>
                     <td>
-                         <a href="#" data-toggle="modal" data-target="#recipe" data-id="${drink.id}" class="btn btn-success get-recipe" >
+                         <a href="#" data-toggle="modal" data-target="#recipe" data-id="${drink.id}" class="btn btn-info get-recipe" >
                               View
                          </a>
                     </td>
@@ -198,20 +197,20 @@ class UI {
           element.remove();
      }
 
-     // Add a Class when cocktail is favorite
-     isFavorite() {
-          const drinks = cocktailDB.getFromDB();
+    // Add a Class when cocktail is favorite
+    isFavorite() {
+        const drinks = cocktailDB.getFromDB();
 
-          drinks.forEach(drink => {
-               // destructuring the id
-               let {id} = drink;
+        drinks.forEach(drink => {
+             // destructuring the id
+             let {id} = drink;
 
-               // Select the favorites
-               let favoriteDrink = document.querySelector(`[data-id="${id}"]`);
-               if(favoriteDrink) {
-                    favoriteDrink.classList.add('is-favorite');
-                    favoriteDrink.textContent = '-';
-               }
-          })
+             // Select the favorites
+             let favoriteDrink = document.querySelector(`[data-id="${id}"]`);
+             if(favoriteDrink) {
+                  favoriteDrink.classList.add('is-favorite');
+                  favoriteDrink.textContent = '-';
+             }
+        })
      }
 }

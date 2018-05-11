@@ -6,7 +6,7 @@ class CocktailDB {
         drinks.push(drink);
         
         // Add the new array into localstorage
-        localstorage.setItem('drinks', JSON.stringify(drinks));
+        localStorage.setItem('drinks', JSON.stringify(drinks));
     }
     
     // Remove from localstorage
