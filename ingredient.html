@@ -78,31 +78,32 @@
        <!-- MODAL -->
         <div class="modal fade" id="recipe" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title"></h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <h3 class="alert alert-success">PREPARATION:</h3>
-                        <p><div class="description-text mb-4"></div></p>
-
-                        <h3  class="alert alert-success">INGREDIENTS:</h3>
-                        <div class="ingredient-list">
-                            <p><ul class="list-group"></ul></p>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title"></h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="ingredients mt-3"></div>
+                        <div class="modal-body">
+                                <h3 class="alert alert-success">PREPARATION:</h3>
+                                <div class="description-text mb-4"></div>
+
+                                <h3  class="alert alert-success">INGREDIENTS:</h3>
+                                <div class="ingredient-list">
+                                        <ul class="list-group"></ul>
+                                </div>
+                            <div class="ingredients mt-3">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            CLOSE
-                        </button>
-                    </div>
-                </div>
             </div>
-        </div> <!--.modal-->
+        </div><!--.modal-->
+
         
         <!-- FOOTER -->
         <footer class="bg-primary p-4">
@@ -120,8 +121,7 @@
         
         <script src="js/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous">    
-        </script>
+        <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
         
         <!-- OUR SCRIPTS-->
         <script src="js/CocktailAPI.js"></script>
