@@ -6,8 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>The Perfect Cocktail | Search by Name</title>
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/custom.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
         <!-- NAVBAR -->
@@ -37,7 +37,7 @@
                 </div>
                 <div class="dropdown">
                     <a href="favorites.html" class="btn btn-success">
-                       My Favorites
+                       MY FAVOURITES
                     </a>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                             <div class="col-12">
                                 <form action="#" id="search-form">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="search" placeholder="Eg. Gin or Tequila  or  Vodka">
+                                            <input type="text" class="form-control" id="search" placeholder="Eg. Gin or Tequila or Vodka">
                                     </div>
                                     <div class="form-group pt-3">
                                         <input type="hidden" id="type" value="ingredient">
@@ -75,6 +75,7 @@
             </div>
         </div> <!--#content-->
         
+       <!-- MODAL -->
         <div class="modal fade" id="recipe" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -86,15 +87,13 @@
                     </div>
                     <div class="modal-body">
                         <h3 class="alert alert-success">PREPARATION:</h3>
-                        <div class="description-text mb-4"></div>
+                        <p><div class="description-text mb-4"></div></p>
 
                         <h3  class="alert alert-success">INGREDIENTS:</h3>
                         <div class="ingredient-list">
-                            <ul class="list-group"></ul>
+                            <p><ul class="list-group"></ul></p>
                         </div>
-                        <div class="ingredients mt-3">
-                            
-                        </div>
+                        <div class="ingredients mt-3"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -119,7 +118,7 @@
             </div>
         </footer>
         
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="js/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous">    
         </script>

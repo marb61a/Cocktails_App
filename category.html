@@ -14,7 +14,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand text-uppercase" href="index.html">
-                    <h1 class="sitename"><span>THE</span>PERFECT<span>COCKTAIL</span></h1>
+                    <h1 class="sitename"><span>THE</span>PERFECT<span>COCKTAIL</span> </h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,14 +31,9 @@
                             <a class="nav-link" href="category.html"><font color="#21ef24">CATEGORY</font></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="filter-alcohol.html"><font color="#469988">ALCOHOL/NON-ALCOHOL</font></a>
+                            <a class="nav-link" href="filter-alcohol.html"><font color="#469988">ALCOHOL/ALCOHOL-FREE</font></a>
                         </li>
                     </ul>
-                </div>
-                <div class="dropdown">
-                    <a href="favorites.html" class="btn btn-success">
-                       My Favorites
-                    </a>
                 </div>
             </div>
         </nav>
@@ -54,30 +49,28 @@
                         <div class="row">
                             <div class="col-12">
                                 <form action="#" id="search-form">
-                                    <div class="form-group mt-4">
+                                    <div class="form-group">
                                         <select class="search-category form-control" id="search">
                                                         
                                         </select>
                                     </div>
                                     <div class="form-group pt-3">
-                                        <input type="hidden" id="type" value="category">
+                                        <input type="hidden" id="type" value="ingredient">
                                         <button type="submit" class="btn btn-info d-block">
                                             GET COCKTAILS
-                                        </button>    
+                                        </button>
                                     </div>
                                 </form>
                             </div>
                             <div class="col-12 mt-5 results-wrapper" style="display:none;">
-                                <h1 class="text-center">
-                                    RESULTS: <span id="total"></span>
-                                </h1>
+                                <h1 class="text-center">RESULTS: <span id="total"></span></h1>
                                 <div id="results" class="mt-5 row" ></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!--#content-->
+        </div>
         
         <!-- MODAL -->
         <div class="modal fade" id="recipe" tabindex="-1" role="dialog"  aria-hidden="true">
@@ -106,9 +99,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!--.modal-->
         
-         <!-- FOOTER -->
+        <!-- FOOTER -->
         <footer class="bg-primary p-4">
             <div class="container">
                 <div class="row justify-content-between">
@@ -122,10 +115,9 @@
             </div>
         </footer>
         
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="js/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous">
-        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         
         <!-- OUR SCRIPTS-->
         <script src="js/CocktailAPI.js"></script>
