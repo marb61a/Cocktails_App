@@ -56,6 +56,8 @@ class CocktailAPI {
           // Wait for response then return JSON
           const cocktails = await apiResponse.json();
 
+          console.log(cocktails);
+
           return {
                cocktails
           }

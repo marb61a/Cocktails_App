@@ -26,7 +26,6 @@ function eventListeners() {
 eventListeners();
 
 
-
 // Get cocktails function
 function getCocktails(e) {
      e.preventDefault();
@@ -64,12 +63,11 @@ function getCocktails(e) {
 
           ui.clearResults();
 
-         // Query by the name of the drink
-         
-         serverResponse.then(cocktails => {
+         // Query by the name of the drink       
+          serverResponse.then(cocktails => {
                if(cocktails.cocktails.drinks === null) {
                     // Nothing exists
-                    ui.printMessage('There\'re no results, try a different term ', 'danger');
+                    ui.printMessage('There are no results, try a different term ', 'danger');
                } else {
                     if(type === 'name') {
                          // Display with ingredients
