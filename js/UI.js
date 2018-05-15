@@ -180,12 +180,12 @@ class UI {
                     </td>
                     <td>${drink.name}</td>
                     <td>
-                         <a href="#" data-toggle="modal" data-target="#recipe" data-id="${drink.id}" class="btn btn-info get-recipe" >
+                         <a href="#" data-toggle="modal" data-target="#recipe" data-id="${drink.id}" class="btn btn-success get-recipe" >
                               View
                          </a>
                     </td>
                     <td>
-                         <a href="#" data-id="${drink.id}" class="btn btn-danger remove-recipe" >
+                         <a href="#" data-id="${drink.id}" class="btn btn-warning remove-recipe" >
                               Remove
                          </a>
                     </td>
