@@ -17,6 +17,18 @@
     font-size: 1.6rem;
 }
 
+.rotate-45-left {
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.rotate-45-right {
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 body {
     background-color: #bed4f7!important;
 }
