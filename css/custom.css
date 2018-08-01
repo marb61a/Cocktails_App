@@ -31,6 +31,7 @@
 
 body {
     /*background-color: #bed4f7!important;*/
+    /* Photo by Karly Gomez on Unsplash */
     background: url(../images/image2.jpg) no-repeat center center fixed;
 }
 
@@ -41,7 +42,7 @@ body {
 }
 
 .sitename {
-    color: #ff003f;
+    color: #32CD32;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
 }
@@ -98,5 +99,5 @@ footer, bg-primary p-4{
     bottom:0;
     left:0;
     right:0;
-    color:#ff003f!important;
+    color:#2C75FF!important;
 }
